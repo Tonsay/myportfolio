@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purlfolio | Florence Pearl Tonsay</title>
+    
+    <link rel="icon" type="image/png" href="assets/img/pearl.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .outline-text { color: white; -webkit-text-stroke: 1.5px black; }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .break-inside-avoid { break-inside: avoid; }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'purl-blue': '#C9DDF7',
+                        'purl-card': '#D8E8FC',
+                    },
+                    fontFamily: {
+                        'serif-purl': ['"DM Serif Display"', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script>
+        function hideAll() {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+        }
+
+        function showPage(id) {
+            hideAll();
+            const target = document.getElementById(id);
+            if (target) {
+                target.classList.remove('hidden');
+                window.scrollTo(0, 0); 
+            }
+        }
+    </script>
+</head>
+<body class="bg-purl-blue min-h-screen overflow-x-hidden text-slate-800 font-sans flex flex-col">
+
+   
+    <main class="flex-grow flex flex-col">
+        <div class="w-full flex-grow">
+
+    
+            <div id="landing-screen" onclick="showPage('options-screen')" class="page-section flex items-center justify-center min-h-screen cursor-pointer animate-fade-in">
+                <div class="bg-purl-card w-[85%] max-w-4xl h-[65vh] rounded-[4rem] shadow-sm flex flex-col items-center justify-center gap-6 transition-all hover:scale-[1.01]">
+                    <h1 class="text-8xl md:text-9xl outline-text font-serif-purl italic text-center px-4">Purlfolio</h1>
+                    <p class="text-xl font-medium tracking-widest opacity-60">Click to see my projects...</p>
+                </div>
+            </div>
+
+         
+            <div id="options-screen" class="page-section hidden min-h-screen p-10 animate-fade-in">
+                <div onclick="showPage('landing-screen')" class="bg-purl-card w-full rounded-[3rem] p-12 mb-16 flex justify-center shadow-sm border border-white/20 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" title="Back to Landing Page">
+                     <h2 class="text-6xl md:text-8xl outline-text font-serif-purl italic text-center px-4">Welcome to Purlfolio!</h2>
+                </div>
+               <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12 pb-10">
+                
+          
+                <div onclick="showPage('photography-studio')" class="group cursor-pointer bg-purl-card p-4 w-80 h-96 rounded-[3rem] flex flex-col items-center shadow-sm hover:shadow-2xl transition-all hover:-translate-y-2">
+                  
+                    <div class="w-full h-64 overflow-hidden rounded-[2rem] mb-4">
+                        <img src="assets/img/IMG_6022.JPG" alt="Photography Cover" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    
+                    <p class="font-serif-purl italic text-4xl mt-auto pb-4">Photography</p>
+                </div>
+
+              
+                <div onclick="showPage('projects-screen')" class="group cursor-pointer bg-purl-card p-4 w-80 h-96 rounded-[3rem] flex flex-col items-center shadow-sm hover:shadow-2xl transition-all border-2 border-white/40 hover:-translate-y-2">
+                   
+                    <div class="w-full h-64 overflow-hidden rounded-[2rem] mb-4">
+                        <img src="assets/img/projects.png" alt="Projects Cover" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                   
+                    <p class="font-serif-purl italic text-4xl mt-auto pb-4">Projects</p>
+                </div>
+
+                
+                <div onclick="showPage('art-gallery')" class="group cursor-pointer bg-purl-card p-4 w-80 h-96 rounded-[3rem] flex flex-col items-center shadow-sm hover:shadow-2xl transition-all border-2 border-white/40 hover:-translate-y-2">
+                    
+                    <div class="w-full h-64 overflow-hidden rounded-[2rem] mb-4">
+                        <img src="assets/img/IMG_6020.jpg" alt="Art Cover" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    
+                    <p class="font-serif-purl italic text-4xl mt-auto pb-4">Art</p>
+                </div>   
+
+            </div>
+                <div class="max-w-7xl mx-auto mt-12 px-4">
+                    <div onclick="showPage('about-me')" class="group cursor-pointer bg-purl-card/80 backdrop-blur-md w-full rounded-[3rem] p-10 flex items-center justify-between shadow-sm border border-white/40 hover:shadow-2xl transition-all hover:-translate-y-1">
+                        <div class="flex flex-col">
+                            <span class="text-blue-500 font-bold tracking-[0.2em] text-xs uppercase mb-2">Get to know me</span>
+                            <p class="font-serif-purl italic text-5xl">About Me</p>
+                        </div>
+                        <div class="bg-white/50 p-6 rounded-full group-hover:bg-white transition-colors">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div id="photography-studio" class="page-section hidden animate-fade-in p-8 md:p-16 min-h-screen">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6 max-w-7xl mx-auto">
+                    <div class="bg-purl-card/80 backdrop-blur-md rounded-[2rem] px-12 py-6 border border-white/20">
+                        <h2 class="text-6xl outline-text font-serif-purl italic">Photography Studio</h2>
+                    </div>
+                    <button onclick="showPage('options-screen')" class="bg-white/50 hover:bg-white px-8 py-3 rounded-full font-medium shadow-sm transition-all">← Back</button>
+                </div>
+                
+                <div class="columns-1 md:columns-2 lg:columns-3 gap-10 space-y-12 max-w-7xl mx-auto">
+                    
+                  
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all group-hover:rotate-1 group-hover:shadow-xl w-full">
+                            <img src="assets/img/IMG_5925.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all group-hover:-rotate-1 group-hover:shadow-xl w-full">
+                            <img src="assets/img/IMG_6011.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:rotate-2 group-hover:shadow-xl w-full">
+                            <img src="assets/img/IMG_6020.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:-rotate-2 group-hover:shadow-xl w-full">
+                            <img src="assets/img/IMG_6022.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:rotate-1 group-hover:shadow-xl w-full">
+                            <img src="assets/img/IMG_6025.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:-rotate-1 group-hover:shadow-xl w-full">
+                            <img src="assets/img/IMG_6036.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:rotate-2 group-hover:shadow-xl w-full">
+                            <img src="assets/img/P5250028.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:-rotate-2 group-hover:shadow-xl w-full">
+                            <img src="assets/img/P5250031.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:-rotate-1 group-hover:shadow-xl w-full">
+                            <img src="assets/img/P5250167.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:rotate-1 group-hover:shadow-xl w-full">
+                            <img src="assets/img/P5250278.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:-rotate-2 group-hover:shadow-xl w-full">
+                            <img src="assets/img/P6300094.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:rotate-2 group-hover:shadow-xl w-full">
+                            <img src="assets/img/P7010138.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:-rotate-1 group-hover:shadow-xl w-full">
+                            <img src="assets/img/P7010184.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:rotate-1 group-hover:shadow-xl w-full">
+                            <img src="assets/img/P7010199.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2rem] p-3 shadow-md transition-all duration-500 group-hover:-rotate-2 group-hover:shadow-xl w-full">
+                            <img src="assets/img/P7010200.jpg" alt="Photography" class="w-full h-auto rounded-[1.5rem] object-cover">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="art-gallery" class="page-section hidden animate-fade-in p-8 md:p-16 min-h-screen">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6 max-w-7xl mx-auto">
+                    <div class="bg-purl-card/80 backdrop-blur-md rounded-[2rem] px-12 py-6 border border-white/20">
+                        <h2 class="text-6xl outline-text font-serif-purl italic">Art Gallery</h2>
+                    </div>
+                    <button onclick="showPage('options-screen')" class="bg-white/50 hover:bg-white px-8 py-3 rounded-full font-medium shadow-sm transition-all">← Back</button>
+                </div>
+                
+                <div class="columns-1 md:columns-2 lg:columns-3 gap-10 space-y-12 max-w-7xl mx-auto">
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-96 w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:rotate-1 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl">Coming Soon</p></div>
+                    </div>
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-[32rem] w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:-rotate-1 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl"> Coming Soon</p></div>
+                    </div>
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-64 w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:rotate-2 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl">Coming Soon</p></div>
+                    </div>
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-80 w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:-rotate-2 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl">Coming Soon</p></div>
+                    </div>
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-[28rem] w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:rotate-1 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl">Coming Soon </p></div>
+                    </div>
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-72 w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:-rotate-1 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl">Coming Soon</p></div>
+                    </div>
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-[30rem] w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:rotate-2 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl">Coming Soon</p></div>
+                    </div>
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-80 w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:-rotate-2 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl">Coming Soon</p></div>
+                    </div>
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-64 w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:rotate-1 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl">Coming Soon</p></div>
+                    </div>
+                    <div class="relative group break-inside-avoid pt-6">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:scale-110 transition-transform" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] h-[32rem] w-full shadow-md flex items-center justify-center transition-all duration-500 group-hover:-rotate-1 group-hover:shadow-xl"><p class="font-serif-purl italic text-slate-400 opacity-40 text-2xl">Coming Soon</p></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="projects-screen" class="page-section hidden min-h-screen p-8 md:p-16 animate-fade-in">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6 max-w-7xl mx-auto">
+                    <div class="bg-purl-card/80 backdrop-blur-md rounded-[2.5rem] px-12 py-6 border border-white/20">
+                        <h2 class="text-6xl outline-text font-serif-purl italic">Projects</h2>
+                    </div>
+                    <button onclick="showPage('options-screen')" class="bg-white/50 hover:bg-white px-8 py-3 rounded-full font-medium shadow-sm transition-all">← Back</button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 max-w-7xl mx-auto">
+                    
+                    <a href="https://github.com/Tonsay/mushketplace" target="_blank" class="relative group pt-6 block cursor-pointer transition-transform hover:-translate-y-1">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:rotate-12 transition-all" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] min-h-[16rem] h-full w-full p-8 shadow-md transition-all group-hover:rotate-1 group-hover:shadow-xl flex flex-col">
+                            <span class="text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase">Full-stack E-commerce</span>
+                            <h3 class="font-serif-purl italic text-3xl mt-2 mb-4">Mushketplace</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">A web-based system for oyster mushroom farmers in Laguna.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">Laravel</span>
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">Vue.js</span>
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">MySQL</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Tonsay/logbook" target="_blank" class="relative group pt-6 block cursor-pointer transition-transform hover:-translate-y-1">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:rotate-12 transition-all" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] min-h-[16rem] h-full w-full p-8 shadow-md transition-all group-hover:-rotate-1 group-hover:shadow-xl flex flex-col">
+                            <span class="text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase">Information System</span>
+                            <h3 class="font-serif-purl italic text-3xl mt-2 mb-4">DOST-SEI Logbook</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Digital audit trail and record management system developed for DOST-SEI.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">PHP</span>
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">Tailwind CSS</span>
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">MySQL</span>
+                            </div>
+                        </div>
+                    </a>
+
+                     <a href="https://github.com/Tonsay/myportfolio" target="_blank" class="relative group pt-6 block cursor-pointer transition-transform hover:-translate-y-1">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:rotate-12 transition-all" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] min-h-[16rem] h-full w-full p-8 shadow-md transition-all group-hover:-rotate-1 group-hover:shadow-xl flex flex-col">
+                            <span class="text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase">Personal Project</span>
+                            <h3 class="font-serif-purl italic text-3xl mt-2 mb-4">mypurlfolio</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Personal portfolio website showcasing my skills and projects.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">HTML</span>
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">CSS</span>
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">Javascript</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Tonsay/Potter-netlify" target="_blank" class="relative group pt-6 block cursor-pointer transition-transform hover:-translate-y-1">
+                            <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:rotate-12 transition-all" alt="pin">
+                            <div class="bg-purl-card rounded-[2.5rem] min-h-[16rem] h-full w-full p-8 shadow-md transition-all group-hover:-rotate-1 group-hover:shadow-xl flex flex-col">
+                                <span class="text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase">Personal Project</span>
+                                <h3 class="font-serif-purl italic text-3xl mt-2 mb-4">Potter-netlify</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">This project provides a web-based interface for your Potter-themed work, showcasing basic front-end structure and successful deployment via the Netlify platform.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">HTML</span>
+                                    <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">CSS</span>
+                                    <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">Javascript</span>
+                                </div>
+                            </div>
+                    </a>
+
+                    <a href="https://github.com/ezramicahqp/OnlineShoppingSystem" target="_blank" class="relative group pt-6 block cursor-pointer transition-transform hover:-translate-y-1">
+                        <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:rotate-12 transition-all" alt="pin">
+                        <div class="bg-purl-card rounded-[2.5rem] min-h-[16rem] h-full w-full p-8 shadow-md transition-all group-hover:-rotate-1 group-hover:shadow-xl flex flex-col">
+                            <span class="text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase">School Project</span>
+                            <h3 class="font-serif-purl italic text-3xl mt-2 mb-4">OnlineShoppingSystem</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">This Java-based project demonstrates Object-Oriented Programming (OOP) principles by implementing a structured e-commerce framework for product and transaction management.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">Java</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Tonsay/PotterDictionary" target="_blank" class="relative group pt-6 block cursor-pointer transition-transform hover:-translate-y-1">
+                            <img src="assets/img/pin.png" class="absolute top-0 left-1/2 -translate-x-1/2 w-10 z-20 drop-shadow-md group-hover:rotate-12 transition-all" alt="pin">
+                            <div class="bg-purl-card rounded-[2.5rem] min-h-[16rem] h-full w-full p-8 shadow-md transition-all group-hover:-rotate-1 group-hover:shadow-xl flex flex-col">
+                                <span class="text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase">Personal Project</span>
+                                <h3 class="font-serif-purl italic text-3xl mt-2 mb-4">PotterDictionary</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Built with C#, this application serves as a searchable digital reference for Harry Potter lore, highlighting your ability to manage structured data and backend logic.</p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="px-3 py-1 bg-white/50 border border-white/20 text-[10px] rounded-lg">C#</span>
+                                </div>
+                            </div>
+                    </a>
+
+                </div>
+            </div>
+
+         
+            <div id="about-me" class="page-section hidden animate-fade-in p-8 md:p-16 min-h-screen">
+                <div class="max-w-5xl mx-auto">
+                    <div class="flex justify-between items-center mb-16">
+                        <div class="w-fit bg-purl-card/80 backdrop-blur-md rounded-[2.5rem] px-12 py-6 shadow-sm border border-white/20">
+                            <h2 class="text-6xl md:text-7xl outline-text font-serif-purl italic">About Me</h2>
+                        </div>
+                        <button onclick="showPage('options-screen')" class="bg-white/50 hover:bg-white px-8 py-3 rounded-full font-medium transition-all shadow-sm">← Back</button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div class="md:col-span-1 space-y-8">
+                            <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-gray-100">
+                                <p class="text-blue-600 font-bold uppercase text-xs tracking-widest mb-4">Current Status</p>
+                                <h3 class="text-2xl font-bold text-slate-800">Florence Pearl B. Tonsay</h3>
+                                <p class="text-slate-600 mt-2">4th Year BSIT Student</p>
+                                <p class="text-slate-500 text-sm">PUP Biñan Campus</p>
+                            </div>
+
+                            <div class="bg-purl-card p-8 rounded-[2.5rem] shadow-md">
+                                <p class="font-bold text-slate-800 mb-4 text-sm">Technical Focus</p>
+                                <ul class="space-y-2 text-slate-700 text-sm">
+                                    <li>• Full-Stack Development</li>
+                                    <li>• Networking & Configuration</li>
+                                    <li>• System Documentation</li>
+                                    <li>• Digital Transformation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-2 bg-white p-12 rounded-[3rem] shadow-xl border border-gray-100 relative">
+                            <img src="assets/img/pin.png" class="absolute -top-4 right-12 w-12" alt="pin">
+                            
+                            <h3 class="font-serif-purl italic text-4xl mb-6">The Journey</h3>
+                            <div class="prose prose-slate space-y-6 text-slate-600 leading-relaxed text-lg">
+                                <p>
+                                    I am an IT intern currently completing a 500-hour practical training. 
+                                    My passion lies in bridging the gap between manual processes and digital efficiency.
+                                </p>
+                                <p>
+                                    From developing the <strong>Mushketplace</strong> e-commerce platform for local farmers to 
+                                    digitizing manual logs into secure audit trails, I focus on creating systems that are 
+                                    as functional as they are user-friendly.
+                                </p>
+                                <p>
+                                    When I'm not configuring databases or refining system artifacts, you'll find me 
+                                    exploring the world through a camera lens or sketching in the studio. 
+                                    This portfolio is a mix of my technical builds and my creative pursuits.
+                                </p>
+                            </div>
+
+                            <div class="mt-12 pt-8 border-t border-gray-100 flex gap-6">
+                                <div>
+                                    <p class="text-xs font-bold uppercase text-slate-400">Location</p>
+                                    <p class="text-slate-700">Laguna, Philippines</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold uppercase text-slate-400">Internship</p>
+                                    <p class="text-slate-700">DOST-SEI</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+
+      
+        <footer class="w-full py-8 pb-12 mt-auto flex flex-col items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+            <img src="assets/img/pearl.png" alt="Purlfolio Logo" class="w-20 h-20 mb-3 drop-shadow-sm object-contain">
+            <p class="text-slate-800 text-xl font-medium tracking-wide">&copy; 2026 tonsay</p>
+        </footer>
+
+    </main>
+</body>
+</html>
